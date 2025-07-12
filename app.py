@@ -38,7 +38,8 @@ def home():
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                background: linear-gradient(135deg, var(--primary-gradient-start),
+                background: linear-gradient(135deg,
+                                            var(--primary-gradient-start),
                                             var(--primary-gradient-end));
                 font-family: 'Inter', sans-serif;
                 color: var(--text-dark);
@@ -138,7 +139,8 @@ def status():
             }}
 
             body {{
-                background: linear-gradient(135deg, var(--status-gradient-start),
+                background: linear-gradient(135deg,
+                                            var(--status-gradient-start),
                                             var(--status-gradient-end));
                 font-family: 'Inter', sans-serif;
                 margin: 0;
