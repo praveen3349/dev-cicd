@@ -1,10 +1,13 @@
 from flask import Flask, jsonify, Response, request
 from datetime import datetime
 
-app = Flask(__name__)
+
+app = Flask(__name__)  # E302: Added blank line above
+
 
 @app.route('/')
 def home():
+    # E501: Breaking long HTML lines for PEP 8 compliance
     html = """
     <!DOCTYPE html>
     <html lang="en">
@@ -13,12 +16,13 @@ def home():
         <title>Flask API Dashboard</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+              rel="stylesheet">
         <style>
             :root {
                 --primary-blue: #007bff;
                 --primary-gradient-start: #6dd5ed; /* Lighter blue */
-                --primary-gradient-end: #2193b0;   /* Deeper blue */
+                --primary-gradient-end: #2193b0;    /* Deeper blue */
                 --card-bg: white;
                 --text-dark: #333;
                 --text-light: #666;
@@ -34,7 +38,8 @@ def home():
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                background: linear-gradient(135deg, var(--primary-gradient-start), var(--primary-gradient-end));
+                background: linear-gradient(135deg, var(--primary-gradient-start),
+                                            var(--primary-gradient-end));
                 font-family: 'Inter', sans-serif;
                 color: var(--text-dark);
                 overflow: hidden; /* Prevent scrollbar during animation */
@@ -107,6 +112,7 @@ def status():
             'last_updated': current_time_ist
         })
 
+    # E501: Breaking long HTML lines for PEP 8 compliance
     html = f"""
     <!DOCTYPE html>
     <html lang="en">
@@ -115,12 +121,13 @@ def status():
         <title>Status - Flask App</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+              rel="stylesheet">
         <style>
             :root {{
                 --success-green: #28a745;
                 --status-gradient-start: #fbc2eb; /* Pinkish */
-                --status-gradient-end: #a6c1ee;   /* Purplish blue */
+                --status-gradient-end: #a6c1ee;    /* Purplish blue */
                 --card-bg: white;
                 --text-dark: #333;
                 --text-light: #666;
@@ -131,7 +138,8 @@ def status():
             }}
 
             body {{
-                background: linear-gradient(135deg, var(--status-gradient-start), var(--status-gradient-end));
+                background: linear-gradient(135deg, var(--status-gradient-start),
+                                            var(--status-gradient-end));
                 font-family: 'Inter', sans-serif;
                 margin: 0;
                 height: 100vh;
@@ -220,4 +228,5 @@ def status():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True, port=5000)
+    app.run(host='0.0.0.0', debug=True, port=5000) # Ensure it binds to 0.0.0.0
+
