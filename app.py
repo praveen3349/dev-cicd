@@ -14,15 +14,15 @@ def home():
         <meta charset="UTF-8">
         <title>Flask API Dashboard</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-              rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
-              rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/
+              bootstrap.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;\
+              400;600;700&display=swap" rel="stylesheet">
         <style>
             :root {
                 --primary-blue: #007bff;
-                --primary-gradient-start: #6dd5ed; /* Lighter blue */
-                --primary-gradient-end: #2193b0;    /* Deeper blue */
+                --primary-gradient-start: #6dd5ed;
+                --primary-gradient-end: #2193b0;
                 --card-bg: white;
                 --text-dark: #333;
                 --text-light: #666;
@@ -38,27 +38,29 @@ def home():
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                background: linear-gradient(135deg,
-                                            var(--primary-gradient-start),
-                                            var(--primary-gradient-end));
+                background: linear-gradient(
+                    135deg,
+                    var(--primary-gradient-start),
+                    var(--primary-gradient-end)
+                );
                 font-family: 'Inter', sans-serif;
                 color: var(--text-dark);
-                overflow: hidden; /* Prevent scrollbar during animation */
+                overflow: hidden;
             }
             .card {
                 background: var(--card-bg);
-                padding: 3.5rem 4rem; /* More generous padding */
+                padding: 3.5rem 4rem;
                 border-radius: var(--border-radius-lg);
                 box-shadow: 0 10px 30px var(--shadow-medium);
                 text-align: center;
-                animation: fadeIn 0.8s ease-out forwards; /* Smoother animation */
-                border: none; /* Remove default bootstrap border */
+                animation: fadeIn 0.8s ease-out forwards;
+                border: none;
             }
             h1 {
-                font-weight: 700; /* Bolder */
+                font-weight: 700;
                 color: var(--primary-blue);
                 margin-bottom: 1rem;
-                font-size: 2.5rem; /* Larger heading */
+                font-size: 2.5rem;
             }
             p.lead {
                 color: var(--text-light);
@@ -69,16 +71,16 @@ def home():
             .btn-primary {
                 background-color: var(--primary-blue);
                 border-color: var(--primary-blue);
-                padding: 14px 30px; /* Larger button */
+                padding: 14px 30px;
                 font-size: 1.1rem;
                 border-radius: 30px;
                 transition: var(--transition-ease);
                 box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
             }
             .btn-primary:hover {
-                background-color: #0056b3; /* Darker blue on hover */
+                background-color: #0056b3;
                 border-color: #0056b3;
-                transform: translateY(-2px); /* Slight lift */
+                transform: translateY(-2px);
                 box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
             }
             @keyframes fadeIn {
@@ -90,8 +92,9 @@ def home():
     <body>
         <div class="card">
             <h1>🚀 Flask API Dashboard</h1>
-            <p class="lead">Monitor and manage your API health with CI/CD integration.</p>
-            <a href="/status" class="btn btn-primary btn-lg">Check API Status</a>
+            <p class="lead">Monitor and manage your API health with CI/CD.</p>
+            <a href="/status" class="btn btn-primary btn-lg\
+                    ">Check API Status</a>
         </div>
     </body>
     </html>
@@ -101,7 +104,6 @@ def home():
 
 @app.route('/status')
 def status():
-    # Get current date and time
     current_time_ist = datetime.now().strftime('%Y-%m-%d %H:%M:%S IST')
 
     if request.args.get("json") == "true":
@@ -120,15 +122,15 @@ def status():
         <meta charset="UTF-8">
         <title>Status - Flask App</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-              rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
-              rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/
+              bootstrap.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;\
+                400;600;700&display=swap" rel="stylesheet">
         <style>
             :root {{
                 --success-green: #28a745;
-                --status-gradient-start: #fbc2eb; /* Pinkish */
-                --status-gradient-end: #a6c1ee;    /* Purplish blue */
+                --status-gradient-start: #fbc2eb;
+                --status-gradient-end: #a6c1ee;
                 --card-bg: white;
                 --text-dark: #333;
                 --text-light: #666;
@@ -139,9 +141,11 @@ def status():
             }}
 
             body {{
-                background: linear-gradient(135deg,
-                                            var(--status-gradient-start),
-                                            var(--status-gradient-end));
+                background: linear-gradient(
+                    135deg,
+                    var(--status-gradient-start),
+                    var(--status-gradient-end)
+                );
                 font-family: 'Inter', sans-serif;
                 margin: 0;
                 height: 100vh;
@@ -168,11 +172,11 @@ def status():
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                gap: 10px; /* Space between icon and text */
+                gap: 10px;
             }}
             .status-card h2 .icon {{
-                font-size: 2.5rem; /* Larger checkmark */
-                line-height: 1; /* Align with text */
+                font-size: 2.5rem;
+                line-height: 1;
             }}
             .status-info {{
                 margin-top: 1.5rem;
@@ -189,7 +193,7 @@ def status():
             .status-info strong {{
                 color: var(--text-dark);
                 font-weight: 600;
-                min-width: 100px; /* Align labels */
+                min-width: 100px;
                 display: inline-block;
             }}
             .btn-back-home {{
@@ -230,6 +234,4 @@ def status():
 
 
 if __name__ == '__main__':
-    # Ensure it binds to 0.0.0.0 for external access
     app.run(host='0.0.0.0', debug=True, port=5000)
-
