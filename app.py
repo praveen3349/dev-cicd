@@ -2,12 +2,11 @@ from flask import Flask, jsonify, Response, request
 from datetime import datetime
 
 
-app = Flask(__name__)  # E302: Added blank line above
+app = Flask(__name__)
 
 
 @app.route('/')
 def home():
-    # E501: Breaking long HTML lines for PEP 8 compliance
     html = """
     <!DOCTYPE html>
     <html lang="en">
@@ -15,7 +14,8 @@ def home():
         <meta charset="UTF-8">
         <title>Flask API Dashboard</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+              rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
               rel="stylesheet">
         <style>
@@ -112,7 +112,6 @@ def status():
             'last_updated': current_time_ist
         })
 
-    # E501: Breaking long HTML lines for PEP 8 compliance
     html = f"""
     <!DOCTYPE html>
     <html lang="en">
@@ -120,7 +119,8 @@ def status():
         <meta charset="UTF-8">
         <title>Status - Flask App</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+              rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
               rel="stylesheet">
         <style>
@@ -228,5 +228,6 @@ def status():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True, port=5000) # Ensure it binds to 0.0.0.0
+    # Ensure it binds to 0.0.0.0 for external access
+    app.run(host='0.0.0.0', debug=True, port=5000)
 
